@@ -34,7 +34,4 @@ LCD_TEST MyLCD (
 .LCD_RS ( LCD_RS )
 );
 //---------- modifique a partir daqui --------
-mux_2x1 #(.N(8)) Inst1 (.it0(SW[7:0]), .it1(SW[15:8]), .sel(SW[17]), .out(LEDR[7:0]) );
-
 endmodule
-

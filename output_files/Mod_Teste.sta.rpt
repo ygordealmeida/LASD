@@ -1,0 +1,1263 @@
+TimeQuest Timing Analyzer report for Mod_Teste
+Sun Feb 04 17:30:14 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Propagation Delay
+ 17. Minimum Propagation Delay
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'CLOCK_50'
+ 24. Fast Model Hold: 'CLOCK_50'
+ 25. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 26. Clock to Output Times
+ 27. Minimum Clock to Output Times
+ 28. Propagation Delay
+ 29. Minimum Propagation Delay
+ 30. Multicorner Timing Analysis Summary
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Progagation Delay
+ 34. Minimum Progagation Delay
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Mod_Teste                                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 279.1 MHz ; 279.1 MHz       ; CLOCK_50   ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -2.583 ; -74.256       ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -52.380            ;
++----------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                     ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -2.583 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.619      ;
+; -2.583 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.619      ;
+; -2.583 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.619      ;
+; -2.583 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.619      ;
+; -2.583 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.619      ;
+; -2.583 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.619      ;
+; -2.583 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.619      ;
+; -2.583 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.619      ;
+; -2.583 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.619      ;
+; -2.551 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.587      ;
+; -2.551 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.587      ;
+; -2.551 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.587      ;
+; -2.551 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.587      ;
+; -2.551 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.587      ;
+; -2.551 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.587      ;
+; -2.551 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.587      ;
+; -2.551 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.587      ;
+; -2.551 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.587      ;
+; -2.456 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.492      ;
+; -2.456 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.492      ;
+; -2.456 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.492      ;
+; -2.456 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.492      ;
+; -2.456 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.492      ;
+; -2.456 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.492      ;
+; -2.456 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.492      ;
+; -2.456 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.492      ;
+; -2.456 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.492      ;
+; -2.437 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.473      ;
+; -2.437 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.473      ;
+; -2.437 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.473      ;
+; -2.437 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.473      ;
+; -2.437 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.473      ;
+; -2.437 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.473      ;
+; -2.437 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.473      ;
+; -2.437 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.473      ;
+; -2.437 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.473      ;
+; -2.412 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.448      ;
+; -2.412 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.448      ;
+; -2.412 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.448      ;
+; -2.412 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.448      ;
+; -2.412 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.448      ;
+; -2.412 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.448      ;
+; -2.412 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.448      ;
+; -2.412 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.448      ;
+; -2.412 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.448      ;
+; -2.307 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.343      ;
+; -2.307 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.343      ;
+; -2.307 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.343      ;
+; -2.307 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.343      ;
+; -2.307 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.343      ;
+; -2.307 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.343      ;
+; -2.307 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.343      ;
+; -2.307 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.343      ;
+; -2.307 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.343      ;
+; -2.305 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.341      ;
+; -2.305 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.341      ;
+; -2.305 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.341      ;
+; -2.305 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.341      ;
+; -2.305 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.341      ;
+; -2.305 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.341      ;
+; -2.305 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.341      ;
+; -2.305 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.341      ;
+; -2.305 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.341      ;
+; -2.267 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.312      ;
+; -2.267 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.312      ;
+; -2.267 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.312      ;
+; -2.267 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.312      ;
+; -2.267 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.312      ;
+; -2.267 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.312      ;
+; -2.267 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.312      ;
+; -2.267 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.312      ;
+; -2.267 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.312      ;
+; -2.246 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.291      ;
+; -2.246 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.291      ;
+; -2.246 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.291      ;
+; -2.246 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.291      ;
+; -2.246 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.291      ;
+; -2.246 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.291      ;
+; -2.246 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.291      ;
+; -2.246 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.291      ;
+; -2.246 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.291      ;
+; -2.243 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.288      ;
+; -2.243 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.288      ;
+; -2.243 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.288      ;
+; -2.243 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.288      ;
+; -2.243 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.288      ;
+; -2.243 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.288      ;
+; -2.243 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.288      ;
+; -2.243 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.288      ;
+; -2.243 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.288      ;
+; -2.228 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.273      ;
+; -2.228 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.273      ;
+; -2.228 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.273      ;
+; -2.228 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.273      ;
+; -2.228 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.273      ;
+; -2.228 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.273      ;
+; -2.228 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.273      ;
+; -2.228 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.273      ;
+; -2.228 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.273      ;
+; -2.210 ; LCD_TEST:MyLCD|mDLY[6]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 3.255      ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                         ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mLCD_ST.000010             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.533 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.799      ;
+; 0.535 ; LCD_TEST:MyLCD|LCD_Controller:u0|preStart ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.801      ;
+; 0.536 ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.802      ;
+; 0.542 ; LCD_TEST:MyLCD|mLCD_Start                 ; LCD_TEST:MyLCD|LCD_Controller:u0|preStart ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.808      ;
+; 0.558 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.824      ;
+; 0.679 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mLCD_ST.000001             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.945      ;
+; 0.680 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mLCD_ST.000011             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.946      ;
+; 0.683 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.947      ;
+; 0.683 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.947      ;
+; 0.703 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.969      ;
+; 0.704 ; LCD_TEST:MyLCD|mDLY[17]                   ; LCD_TEST:MyLCD|mDLY[17]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.970      ;
+; 0.707 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.973      ;
+; 0.717 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; LCD_TEST:MyLCD|LCD_Controller:u0|oDone    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.981      ;
+; 0.797 ; LCD_TEST:MyLCD|mDLY[9]                    ; LCD_TEST:MyLCD|mDLY[9]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.063      ;
+; 0.805 ; LCD_TEST:MyLCD|mDLY[11]                   ; LCD_TEST:MyLCD|mDLY[11]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.807 ; LCD_TEST:MyLCD|mDLY[0]                    ; LCD_TEST:MyLCD|mDLY[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.073      ;
+; 0.810 ; LCD_TEST:MyLCD|mDLY[6]                    ; LCD_TEST:MyLCD|mDLY[6]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; LCD_TEST:MyLCD|mDLY[7]                    ; LCD_TEST:MyLCD|mDLY[7]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.814 ; LCD_TEST:MyLCD|mDLY[8]                    ; LCD_TEST:MyLCD|mDLY[8]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.080      ;
+; 0.817 ; LCD_TEST:MyLCD|mLCD_Start                 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.083      ;
+; 0.818 ; LCD_TEST:MyLCD|mDLY[2]                    ; LCD_TEST:MyLCD|mDLY[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.084      ;
+; 0.820 ; LCD_TEST:MyLCD|mDLY[4]                    ; LCD_TEST:MyLCD|mDLY[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.086      ;
+; 0.821 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.087      ;
+; 0.836 ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.102      ;
+; 0.837 ; LCD_TEST:MyLCD|LUT_INDEX[3]               ; LCD_TEST:MyLCD|LUT_INDEX[3]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.103      ;
+; 0.841 ; LCD_TEST:MyLCD|mDLY[12]                   ; LCD_TEST:MyLCD|mDLY[12]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.107      ;
+; 0.842 ; LCD_TEST:MyLCD|mDLY[15]                   ; LCD_TEST:MyLCD|mDLY[15]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.108      ;
+; 0.844 ; LCD_TEST:MyLCD|mDLY[1]                    ; LCD_TEST:MyLCD|mDLY[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.110      ;
+; 0.844 ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; LCD_TEST:MyLCD|mLCD_DATA[6]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.106      ;
+; 0.845 ; LCD_TEST:MyLCD|mDLY[3]                    ; LCD_TEST:MyLCD|mDLY[3]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.111      ;
+; 0.846 ; LCD_TEST:MyLCD|mDLY[5]                    ; LCD_TEST:MyLCD|mDLY[5]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.850 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.116      ;
+; 0.850 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|oDone    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.116      ;
+; 0.856 ; LCD_TEST:MyLCD|mLCD_ST.000011             ; LCD_TEST:MyLCD|mLCD_Start                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.123      ;
+; 0.861 ; LCD_TEST:MyLCD|mLCD_ST.000011             ; LCD_TEST:MyLCD|mLCD_ST.000000             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.128      ;
+; 0.868 ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.134      ;
+; 0.870 ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.136      ;
+; 0.872 ; LCD_TEST:MyLCD|LUT_INDEX[2]               ; LCD_TEST:MyLCD|LUT_INDEX[2]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.138      ;
+; 0.902 ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; LCD_TEST:MyLCD|mLCD_RS                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.164      ;
+; 0.906 ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; LCD_TEST:MyLCD|mLCD_DATA[5]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.168      ;
+; 0.944 ; LCD_TEST:MyLCD|mLCD_Start                 ; LCD_TEST:MyLCD|mLCD_Start                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.210      ;
+; 0.947 ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; LCD_TEST:MyLCD|mLCD_DATA[2]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.209      ;
+; 0.948 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.214      ;
+; 0.949 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.215      ;
+; 0.952 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.218      ;
+; 0.952 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.218      ;
+; 0.952 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.218      ;
+; 0.952 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.218      ;
+; 0.956 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.222      ;
+; 0.956 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.222      ;
+; 0.956 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.222      ;
+; 0.956 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[3]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.222      ;
+; 0.956 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.222      ;
+; 0.956 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[5]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.222      ;
+; 0.956 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[6]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.222      ;
+; 0.956 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[7]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.222      ;
+; 0.956 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[8]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.222      ;
+; 0.959 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.225      ;
+; 0.978 ; LCD_TEST:MyLCD|mDLY[16]                   ; LCD_TEST:MyLCD|mDLY[16]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.244      ;
+; 0.978 ; LCD_TEST:MyLCD|mLCD_ST.000001             ; LCD_TEST:MyLCD|mLCD_Start                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.245      ;
+; 0.981 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 1.245      ;
+; 0.986 ; LCD_TEST:MyLCD|mDLY[14]                   ; LCD_TEST:MyLCD|mDLY[14]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.252      ;
+; 0.988 ; LCD_TEST:MyLCD|mDLY[10]                   ; LCD_TEST:MyLCD|mDLY[10]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.254      ;
+; 0.997 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mLCD_Start                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.264      ;
+; 1.005 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.273      ;
+; 1.011 ; LCD_TEST:MyLCD|mDLY[13]                   ; LCD_TEST:MyLCD|mDLY[13]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.277      ;
+; 1.024 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 1.288      ;
+; 1.035 ; LCD_TEST:MyLCD|mLCD_Start                 ; LCD_TEST:MyLCD|LCD_Controller:u0|oDone    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.301      ;
+; 1.065 ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; LCD_TEST:MyLCD|mLCD_DATA[3]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.327      ;
+; 1.070 ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; LCD_TEST:MyLCD|mLCD_DATA[0]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.332      ;
+; 1.073 ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; LCD_TEST:MyLCD|mLCD_DATA[7]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.335      ;
+; 1.076 ; LCD_TEST:MyLCD|LUT_INDEX[2]               ; LCD_TEST:MyLCD|mLCD_DATA[6]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.338      ;
+; 1.093 ; LCD_TEST:MyLCD|LUT_INDEX[3]               ; LCD_TEST:MyLCD|mLCD_DATA[7]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.355      ;
+; 1.103 ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; LCD_TEST:MyLCD|mLCD_DATA[0]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.365      ;
+; 1.110 ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; LCD_TEST:MyLCD|mLCD_DATA[4]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.372      ;
+; 1.112 ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; LCD_TEST:MyLCD|mLCD_DATA[1]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.374      ;
+; 1.112 ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; LCD_TEST:MyLCD|mLCD_DATA[4]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.374      ;
+; 1.113 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.381      ;
+; 1.113 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.381      ;
+; 1.113 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.381      ;
+; 1.113 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.381      ;
+; 1.113 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.381      ;
+; 1.113 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.381      ;
+; 1.113 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.381      ;
+; 1.113 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.381      ;
+; 1.114 ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; LCD_TEST:MyLCD|mLCD_DATA[1]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.376      ;
+; 1.119 ; LCD_TEST:MyLCD|mLCD_ST.000011             ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 1.383      ;
+; 1.119 ; LCD_TEST:MyLCD|mLCD_ST.000011             ; LCD_TEST:MyLCD|LUT_INDEX[2]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 1.383      ;
+; 1.119 ; LCD_TEST:MyLCD|mLCD_ST.000011             ; LCD_TEST:MyLCD|LUT_INDEX[3]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 1.383      ;
+; 1.119 ; LCD_TEST:MyLCD|mLCD_ST.000011             ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 1.383      ;
+; 1.119 ; LCD_TEST:MyLCD|mLCD_ST.000011             ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 1.383      ;
+; 1.119 ; LCD_TEST:MyLCD|mLCD_ST.000011             ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 1.383      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|oDone    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|oDone    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|preStart ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|preStart ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[0]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[0]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[1]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[1]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[2]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[2]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[3]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[3]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[4]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[4]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[5]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[5]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[10]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[10]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[11]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[11]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[12]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[12]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[13]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[13]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[14]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[14]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[15]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[15]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[16]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[16]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[17]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[17]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[8]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[8]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[9]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[9]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[0]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[0]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[1]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[1]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[2]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[2]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[3]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[3]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[4]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[4]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[5]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[5]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[6]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[6]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[7]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[7]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_RS                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_RS                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000000             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000000             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000001             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000001             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000010             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000010             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000011             ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; LCD_DATA[*]  ; CLOCK_50   ; 6.336 ; 6.336 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 6.210 ; 6.210 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 6.336 ; 6.336 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 6.053 ; 6.053 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 6.061 ; 6.061 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 6.033 ; 6.033 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 6.055 ; 6.055 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 6.053 ; 6.053 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 6.336 ; 6.336 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 6.247 ; 6.247 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 6.340 ; 6.340 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; LCD_DATA[*]  ; CLOCK_50   ; 6.033 ; 6.033 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 6.210 ; 6.210 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 6.336 ; 6.336 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 6.053 ; 6.053 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 6.061 ; 6.061 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 6.033 ; 6.033 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 6.055 ; 6.055 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 6.053 ; 6.053 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 6.336 ; 6.336 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 6.247 ; 6.247 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 6.340 ; 6.340 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; SW[0]      ; LEDR[0]     ; 6.334  ;        ;        ; 6.334  ;
+; SW[1]      ; LEDR[1]     ; 6.183  ;        ;        ; 6.183  ;
+; SW[2]      ; LEDR[2]     ; 6.178  ;        ;        ; 6.178  ;
+; SW[3]      ; LEDR[3]     ; 6.396  ;        ;        ; 6.396  ;
+; SW[4]      ; LEDR[4]     ; 7.161  ;        ;        ; 7.161  ;
+; SW[5]      ; LEDR[5]     ; 7.112  ;        ;        ; 7.112  ;
+; SW[6]      ; LEDR[6]     ; 5.982  ;        ;        ; 5.982  ;
+; SW[7]      ; LEDR[7]     ; 8.706  ;        ;        ; 8.706  ;
+; SW[8]      ; LEDR[0]     ; 7.934  ;        ;        ; 7.934  ;
+; SW[9]      ; LEDR[1]     ; 8.236  ;        ;        ; 8.236  ;
+; SW[10]     ; LEDR[2]     ; 7.932  ;        ;        ; 7.932  ;
+; SW[11]     ; LEDR[3]     ; 7.745  ;        ;        ; 7.745  ;
+; SW[12]     ; LEDR[4]     ; 8.594  ;        ;        ; 8.594  ;
+; SW[13]     ; LEDR[5]     ; 12.360 ;        ;        ; 12.360 ;
+; SW[14]     ; LEDR[6]     ; 11.283 ;        ;        ; 11.283 ;
+; SW[15]     ; LEDR[7]     ; 12.507 ;        ;        ; 12.507 ;
+; SW[17]     ; LEDR[0]     ; 12.423 ; 12.423 ; 12.423 ; 12.423 ;
+; SW[17]     ; LEDR[1]     ; 12.426 ; 12.426 ; 12.426 ; 12.426 ;
+; SW[17]     ; LEDR[2]     ; 12.424 ; 12.424 ; 12.424 ; 12.424 ;
+; SW[17]     ; LEDR[3]     ; 11.888 ; 11.888 ; 11.888 ; 11.888 ;
+; SW[17]     ; LEDR[4]     ; 12.638 ; 12.638 ; 12.638 ; 12.638 ;
+; SW[17]     ; LEDR[5]     ; 12.603 ; 12.603 ; 12.603 ; 12.603 ;
+; SW[17]     ; LEDR[6]     ; 11.470 ; 11.470 ; 11.470 ; 11.470 ;
+; SW[17]     ; LEDR[7]     ; 12.743 ; 12.743 ; 12.743 ; 12.743 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; SW[0]      ; LEDR[0]     ; 6.334  ;        ;        ; 6.334  ;
+; SW[1]      ; LEDR[1]     ; 6.183  ;        ;        ; 6.183  ;
+; SW[2]      ; LEDR[2]     ; 6.178  ;        ;        ; 6.178  ;
+; SW[3]      ; LEDR[3]     ; 6.396  ;        ;        ; 6.396  ;
+; SW[4]      ; LEDR[4]     ; 7.161  ;        ;        ; 7.161  ;
+; SW[5]      ; LEDR[5]     ; 7.112  ;        ;        ; 7.112  ;
+; SW[6]      ; LEDR[6]     ; 5.982  ;        ;        ; 5.982  ;
+; SW[7]      ; LEDR[7]     ; 8.706  ;        ;        ; 8.706  ;
+; SW[8]      ; LEDR[0]     ; 7.934  ;        ;        ; 7.934  ;
+; SW[9]      ; LEDR[1]     ; 8.236  ;        ;        ; 8.236  ;
+; SW[10]     ; LEDR[2]     ; 7.932  ;        ;        ; 7.932  ;
+; SW[11]     ; LEDR[3]     ; 7.745  ;        ;        ; 7.745  ;
+; SW[12]     ; LEDR[4]     ; 8.594  ;        ;        ; 8.594  ;
+; SW[13]     ; LEDR[5]     ; 12.360 ;        ;        ; 12.360 ;
+; SW[14]     ; LEDR[6]     ; 11.283 ;        ;        ; 11.283 ;
+; SW[15]     ; LEDR[7]     ; 12.507 ;        ;        ; 12.507 ;
+; SW[17]     ; LEDR[0]     ; 12.423 ; 12.423 ; 12.423 ; 12.423 ;
+; SW[17]     ; LEDR[1]     ; 12.426 ; 12.426 ; 12.426 ; 12.426 ;
+; SW[17]     ; LEDR[2]     ; 12.424 ; 12.424 ; 12.424 ; 12.424 ;
+; SW[17]     ; LEDR[3]     ; 11.888 ; 11.888 ; 11.888 ; 11.888 ;
+; SW[17]     ; LEDR[4]     ; 12.638 ; 12.638 ; 12.638 ; 12.638 ;
+; SW[17]     ; LEDR[5]     ; 12.603 ; 12.603 ; 12.603 ; 12.603 ;
+; SW[17]     ; LEDR[6]     ; 11.470 ; 11.470 ; 11.470 ; 11.470 ;
+; SW[17]     ; LEDR[7]     ; 12.743 ; 12.743 ; 12.743 ; 12.743 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -0.681 ; -12.183       ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -52.380            ;
++----------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                     ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -0.681 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.713      ;
+; -0.681 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.713      ;
+; -0.681 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.713      ;
+; -0.681 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.713      ;
+; -0.681 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.713      ;
+; -0.681 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.713      ;
+; -0.681 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.713      ;
+; -0.681 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.713      ;
+; -0.681 ; LCD_TEST:MyLCD|mDLY[15] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.713      ;
+; -0.665 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.697      ;
+; -0.665 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.697      ;
+; -0.665 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.697      ;
+; -0.665 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.697      ;
+; -0.665 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.697      ;
+; -0.665 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.697      ;
+; -0.665 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.697      ;
+; -0.665 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.697      ;
+; -0.665 ; LCD_TEST:MyLCD|mDLY[16] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.697      ;
+; -0.619 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.651      ;
+; -0.619 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.651      ;
+; -0.619 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.651      ;
+; -0.619 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.651      ;
+; -0.619 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.651      ;
+; -0.619 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.651      ;
+; -0.619 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.651      ;
+; -0.619 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.651      ;
+; -0.619 ; LCD_TEST:MyLCD|mDLY[13] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.651      ;
+; -0.609 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.641      ;
+; -0.609 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.641      ;
+; -0.609 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.641      ;
+; -0.609 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.641      ;
+; -0.609 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.641      ;
+; -0.609 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.641      ;
+; -0.609 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.641      ;
+; -0.609 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.641      ;
+; -0.609 ; LCD_TEST:MyLCD|mDLY[12] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.641      ;
+; -0.589 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.621      ;
+; -0.589 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.621      ;
+; -0.589 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.621      ;
+; -0.589 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.621      ;
+; -0.589 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.621      ;
+; -0.589 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.621      ;
+; -0.589 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.621      ;
+; -0.589 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.621      ;
+; -0.589 ; LCD_TEST:MyLCD|mDLY[9]  ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.621      ;
+; -0.547 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.579      ;
+; -0.547 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.579      ;
+; -0.547 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.579      ;
+; -0.547 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.579      ;
+; -0.547 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.579      ;
+; -0.547 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.579      ;
+; -0.547 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.579      ;
+; -0.547 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.579      ;
+; -0.547 ; LCD_TEST:MyLCD|mDLY[11] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.579      ;
+; -0.546 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.578      ;
+; -0.546 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.578      ;
+; -0.546 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.578      ;
+; -0.546 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.578      ;
+; -0.546 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.578      ;
+; -0.546 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.578      ;
+; -0.546 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.578      ;
+; -0.546 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.578      ;
+; -0.546 ; LCD_TEST:MyLCD|mDLY[14] ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.578      ;
+; -0.536 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.577      ;
+; -0.536 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.577      ;
+; -0.536 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.577      ;
+; -0.536 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.577      ;
+; -0.536 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.577      ;
+; -0.536 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.577      ;
+; -0.536 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.577      ;
+; -0.536 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.577      ;
+; -0.536 ; LCD_TEST:MyLCD|mDLY[1]  ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.577      ;
+; -0.528 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.569      ;
+; -0.528 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.569      ;
+; -0.528 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.569      ;
+; -0.528 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.569      ;
+; -0.528 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.569      ;
+; -0.528 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.569      ;
+; -0.528 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.569      ;
+; -0.528 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.569      ;
+; -0.528 ; LCD_TEST:MyLCD|mDLY[5]  ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.569      ;
+; -0.527 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.568      ;
+; -0.527 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.568      ;
+; -0.527 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.568      ;
+; -0.527 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.568      ;
+; -0.527 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.568      ;
+; -0.527 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.568      ;
+; -0.527 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.568      ;
+; -0.527 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.568      ;
+; -0.527 ; LCD_TEST:MyLCD|mDLY[8]  ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.568      ;
+; -0.526 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.567      ;
+; -0.526 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.567      ;
+; -0.526 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.567      ;
+; -0.526 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.567      ;
+; -0.526 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.567      ;
+; -0.526 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.567      ;
+; -0.526 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.567      ;
+; -0.526 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.567      ;
+; -0.526 ; LCD_TEST:MyLCD|mDLY[4]  ; LCD_TEST:MyLCD|mDLY[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.567      ;
+; -0.512 ; LCD_TEST:MyLCD|mDLY[6]  ; LCD_TEST:MyLCD|mDLY[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 1.553      ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                         ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mLCD_ST.000010             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.246 ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.398      ;
+; 0.248 ; LCD_TEST:MyLCD|LCD_Controller:u0|preStart ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.400      ;
+; 0.254 ; LCD_TEST:MyLCD|mLCD_Start                 ; LCD_TEST:MyLCD|LCD_Controller:u0|preStart ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.406      ;
+; 0.263 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.415      ;
+; 0.265 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.417      ;
+; 0.303 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mLCD_ST.000001             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.455      ;
+; 0.319 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.470      ;
+; 0.320 ; LCD_TEST:MyLCD|mDLY[17]                   ; LCD_TEST:MyLCD|mDLY[17]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.472      ;
+; 0.322 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.474      ;
+; 0.326 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; LCD_TEST:MyLCD|LCD_Controller:u0|oDone    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.477      ;
+; 0.330 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mLCD_ST.000011             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.482      ;
+; 0.339 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.490      ;
+; 0.348 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.500      ;
+; 0.357 ; LCD_TEST:MyLCD|mDLY[9]                    ; LCD_TEST:MyLCD|mDLY[9]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.509      ;
+; 0.362 ; LCD_TEST:MyLCD|mDLY[11]                   ; LCD_TEST:MyLCD|mDLY[11]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.364 ; LCD_TEST:MyLCD|mDLY[0]                    ; LCD_TEST:MyLCD|mDLY[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; LCD_TEST:MyLCD|mDLY[6]                    ; LCD_TEST:MyLCD|mDLY[6]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; LCD_TEST:MyLCD|mDLY[7]                    ; LCD_TEST:MyLCD|mDLY[7]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; LCD_TEST:MyLCD|mDLY[8]                    ; LCD_TEST:MyLCD|mDLY[8]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.369 ; LCD_TEST:MyLCD|mDLY[2]                    ; LCD_TEST:MyLCD|mDLY[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; LCD_TEST:MyLCD|mDLY[4]                    ; LCD_TEST:MyLCD|mDLY[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371 ; LCD_TEST:MyLCD|mLCD_Start                 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.375 ; LCD_TEST:MyLCD|mDLY[12]                   ; LCD_TEST:MyLCD|mDLY[12]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; LCD_TEST:MyLCD|mDLY[1]                    ; LCD_TEST:MyLCD|mDLY[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; LCD_TEST:MyLCD|mDLY[15]                   ; LCD_TEST:MyLCD|mDLY[15]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; LCD_TEST:MyLCD|mDLY[3]                    ; LCD_TEST:MyLCD|mDLY[3]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; LCD_TEST:MyLCD|mDLY[5]                    ; LCD_TEST:MyLCD|mDLY[5]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; LCD_TEST:MyLCD|LUT_INDEX[3]               ; LCD_TEST:MyLCD|LUT_INDEX[3]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|oDone    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.531      ;
+; 0.381 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.533      ;
+; 0.382 ; LCD_TEST:MyLCD|mLCD_ST.000011             ; LCD_TEST:MyLCD|mLCD_ST.000000             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.536      ;
+; 0.382 ; LCD_TEST:MyLCD|mLCD_ST.000011             ; LCD_TEST:MyLCD|mLCD_Start                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.536      ;
+; 0.388 ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.540      ;
+; 0.389 ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.541      ;
+; 0.390 ; LCD_TEST:MyLCD|LUT_INDEX[2]               ; LCD_TEST:MyLCD|LUT_INDEX[2]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.542      ;
+; 0.400 ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; LCD_TEST:MyLCD|mLCD_DATA[6]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.551      ;
+; 0.420 ; LCD_TEST:MyLCD|mLCD_Start                 ; LCD_TEST:MyLCD|mLCD_Start                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.572      ;
+; 0.426 ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; LCD_TEST:MyLCD|mLCD_RS                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.577      ;
+; 0.430 ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; LCD_TEST:MyLCD|mLCD_DATA[5]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.581      ;
+; 0.433 ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.585      ;
+; 0.440 ; LCD_TEST:MyLCD|mDLY[16]                   ; LCD_TEST:MyLCD|mDLY[16]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.592      ;
+; 0.441 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.593      ;
+; 0.441 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.592      ;
+; 0.442 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.594      ;
+; 0.443 ; LCD_TEST:MyLCD|mDLY[10]                   ; LCD_TEST:MyLCD|mDLY[10]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.595      ;
+; 0.444 ; LCD_TEST:MyLCD|mDLY[14]                   ; LCD_TEST:MyLCD|mDLY[14]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.596      ;
+; 0.445 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.597      ;
+; 0.446 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.598      ;
+; 0.448 ; LCD_TEST:MyLCD|mDLY[13]                   ; LCD_TEST:MyLCD|mDLY[13]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.600      ;
+; 0.453 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mLCD_Start                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.607      ;
+; 0.456 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.607      ;
+; 0.459 ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.612      ;
+; 0.460 ; LCD_TEST:MyLCD|mLCD_ST.000001             ; LCD_TEST:MyLCD|mLCD_Start                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.614      ;
+; 0.465 ; LCD_TEST:MyLCD|mLCD_Start                 ; LCD_TEST:MyLCD|LCD_Controller:u0|oDone    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.617      ;
+; 0.466 ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; LCD_TEST:MyLCD|mLCD_DATA[2]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.617      ;
+; 0.488 ; LCD_TEST:MyLCD|LUT_INDEX[3]               ; LCD_TEST:MyLCD|mLCD_DATA[7]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.639      ;
+; 0.495 ; LCD_TEST:MyLCD|mDLY[9]                    ; LCD_TEST:MyLCD|mDLY[10]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.647      ;
+; 0.500 ; LCD_TEST:MyLCD|mDLY[11]                   ; LCD_TEST:MyLCD|mDLY[12]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.652      ;
+; 0.503 ; LCD_TEST:MyLCD|mDLY[6]                    ; LCD_TEST:MyLCD|mDLY[7]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.655      ;
+; 0.503 ; LCD_TEST:MyLCD|mDLY[7]                    ; LCD_TEST:MyLCD|mDLY[8]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.655      ;
+; 0.507 ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; LCD_TEST:MyLCD|mLCD_DATA[3]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.658      ;
+; 0.507 ; LCD_TEST:MyLCD|mDLY[2]                    ; LCD_TEST:MyLCD|mDLY[3]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.659      ;
+; 0.508 ; LCD_TEST:MyLCD|mDLY[4]                    ; LCD_TEST:MyLCD|mDLY[5]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.660      ;
+; 0.511 ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; LCD_TEST:MyLCD|mLCD_DATA[0]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.662      ;
+; 0.511 ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; LCD_TEST:MyLCD|mLCD_DATA[4]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.662      ;
+; 0.512 ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; LCD_TEST:MyLCD|mLCD_DATA[7]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.663      ;
+; 0.512 ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; LCD_TEST:MyLCD|mLCD_DATA[0]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.663      ;
+; 0.513 ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; LCD_TEST:MyLCD|mLCD_DATA[4]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.664      ;
+; 0.514 ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; LCD_TEST:MyLCD|mLCD_DATA[1]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.665      ;
+; 0.514 ; LCD_TEST:MyLCD|LUT_INDEX[2]               ; LCD_TEST:MyLCD|mLCD_DATA[6]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.665      ;
+; 0.515 ; LCD_TEST:MyLCD|LUT_INDEX[1]               ; LCD_TEST:MyLCD|LUT_INDEX[2]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.667      ;
+; 0.515 ; LCD_TEST:MyLCD|mDLY[12]                   ; LCD_TEST:MyLCD|mDLY[13]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.667      ;
+; 0.516 ; LCD_TEST:MyLCD|mDLY[1]                    ; LCD_TEST:MyLCD|mDLY[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; LCD_TEST:MyLCD|LUT_INDEX[3]               ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; LCD_TEST:MyLCD|mDLY[15]                   ; LCD_TEST:MyLCD|mDLY[16]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.668      ;
+; 0.518 ; LCD_TEST:MyLCD|mDLY[5]                    ; LCD_TEST:MyLCD|mDLY[6]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518 ; LCD_TEST:MyLCD|mDLY[3]                    ; LCD_TEST:MyLCD|mDLY[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.670      ;
+; 0.519 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.671      ;
+; 0.519 ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.671      ;
+; 0.522 ; LCD_TEST:MyLCD|LUT_INDEX[0]               ; LCD_TEST:MyLCD|mLCD_DATA[1]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.673      ;
+; 0.523 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[3]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[5]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[6]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[7]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523 ; LCD_TEST:MyLCD|mLCD_ST.000010             ; LCD_TEST:MyLCD|mDLY[8]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.528 ; LCD_TEST:MyLCD|LUT_INDEX[4]               ; LCD_TEST:MyLCD|LUT_INDEX[5]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.680      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|Cont[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|LCD_EN   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.00    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.01    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.10    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|ST.11    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|mStart   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|oDone    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|oDone    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|preStart ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LCD_Controller:u0|preStart ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[0]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[0]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[1]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[1]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[2]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[2]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[3]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[3]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[4]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[4]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[5]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|LUT_INDEX[5]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[10]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[10]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[11]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[11]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[12]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[12]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[13]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[13]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[14]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[14]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[15]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[15]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[16]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[16]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[17]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[17]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[8]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[8]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[9]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mDLY[9]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[0]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[0]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[1]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[1]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[2]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[2]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[3]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[3]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[4]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[4]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[5]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[5]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[6]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[6]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[7]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_DATA[7]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_RS                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_RS                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000000             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000000             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000001             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000001             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000010             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000010             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LCD_TEST:MyLCD|mLCD_ST.000011             ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; LCD_DATA[*]  ; CLOCK_50   ; 3.570 ; 3.570 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 3.564 ; 3.564 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 3.445 ; 3.445 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 3.447 ; 3.447 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 3.425 ; 3.425 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 3.439 ; 3.439 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 3.445 ; 3.445 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 3.570 ; 3.570 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 3.526 ; 3.526 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 3.571 ; 3.571 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; LCD_DATA[*]  ; CLOCK_50   ; 3.425 ; 3.425 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 3.564 ; 3.564 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 3.445 ; 3.445 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 3.447 ; 3.447 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 3.425 ; 3.425 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 3.439 ; 3.439 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 3.445 ; 3.445 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 3.570 ; 3.570 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 3.526 ; 3.526 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 3.571 ; 3.571 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; LEDR[0]     ; 3.292 ;       ;       ; 3.292 ;
+; SW[1]      ; LEDR[1]     ; 3.234 ;       ;       ; 3.234 ;
+; SW[2]      ; LEDR[2]     ; 3.214 ;       ;       ; 3.214 ;
+; SW[3]      ; LEDR[3]     ; 3.334 ;       ;       ; 3.334 ;
+; SW[4]      ; LEDR[4]     ; 3.659 ;       ;       ; 3.659 ;
+; SW[5]      ; LEDR[5]     ; 3.621 ;       ;       ; 3.621 ;
+; SW[6]      ; LEDR[6]     ; 3.158 ;       ;       ; 3.158 ;
+; SW[7]      ; LEDR[7]     ; 4.647 ;       ;       ; 4.647 ;
+; SW[8]      ; LEDR[0]     ; 4.168 ;       ;       ; 4.168 ;
+; SW[9]      ; LEDR[1]     ; 4.281 ;       ;       ; 4.281 ;
+; SW[10]     ; LEDR[2]     ; 4.101 ;       ;       ; 4.101 ;
+; SW[11]     ; LEDR[3]     ; 4.034 ;       ;       ; 4.034 ;
+; SW[12]     ; LEDR[4]     ; 4.405 ;       ;       ; 4.405 ;
+; SW[13]     ; LEDR[5]     ; 6.726 ;       ;       ; 6.726 ;
+; SW[14]     ; LEDR[6]     ; 6.281 ;       ;       ; 6.281 ;
+; SW[15]     ; LEDR[7]     ; 6.932 ;       ;       ; 6.932 ;
+; SW[17]     ; LEDR[0]     ; 6.844 ; 6.844 ; 6.844 ; 6.844 ;
+; SW[17]     ; LEDR[1]     ; 6.833 ; 6.833 ; 6.833 ; 6.833 ;
+; SW[17]     ; LEDR[2]     ; 6.816 ; 6.816 ; 6.816 ; 6.816 ;
+; SW[17]     ; LEDR[3]     ; 6.553 ; 6.553 ; 6.553 ; 6.553 ;
+; SW[17]     ; LEDR[4]     ; 6.866 ; 6.866 ; 6.866 ; 6.866 ;
+; SW[17]     ; LEDR[5]     ; 6.843 ; 6.843 ; 6.843 ; 6.843 ;
+; SW[17]     ; LEDR[6]     ; 6.377 ; 6.377 ; 6.377 ; 6.377 ;
+; SW[17]     ; LEDR[7]     ; 7.044 ; 7.044 ; 7.044 ; 7.044 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; LEDR[0]     ; 3.292 ;       ;       ; 3.292 ;
+; SW[1]      ; LEDR[1]     ; 3.234 ;       ;       ; 3.234 ;
+; SW[2]      ; LEDR[2]     ; 3.214 ;       ;       ; 3.214 ;
+; SW[3]      ; LEDR[3]     ; 3.334 ;       ;       ; 3.334 ;
+; SW[4]      ; LEDR[4]     ; 3.659 ;       ;       ; 3.659 ;
+; SW[5]      ; LEDR[5]     ; 3.621 ;       ;       ; 3.621 ;
+; SW[6]      ; LEDR[6]     ; 3.158 ;       ;       ; 3.158 ;
+; SW[7]      ; LEDR[7]     ; 4.647 ;       ;       ; 4.647 ;
+; SW[8]      ; LEDR[0]     ; 4.168 ;       ;       ; 4.168 ;
+; SW[9]      ; LEDR[1]     ; 4.281 ;       ;       ; 4.281 ;
+; SW[10]     ; LEDR[2]     ; 4.101 ;       ;       ; 4.101 ;
+; SW[11]     ; LEDR[3]     ; 4.034 ;       ;       ; 4.034 ;
+; SW[12]     ; LEDR[4]     ; 4.405 ;       ;       ; 4.405 ;
+; SW[13]     ; LEDR[5]     ; 6.726 ;       ;       ; 6.726 ;
+; SW[14]     ; LEDR[6]     ; 6.281 ;       ;       ; 6.281 ;
+; SW[15]     ; LEDR[7]     ; 6.932 ;       ;       ; 6.932 ;
+; SW[17]     ; LEDR[0]     ; 6.844 ; 6.844 ; 6.844 ; 6.844 ;
+; SW[17]     ; LEDR[1]     ; 6.833 ; 6.833 ; 6.833 ; 6.833 ;
+; SW[17]     ; LEDR[2]     ; 6.816 ; 6.816 ; 6.816 ; 6.816 ;
+; SW[17]     ; LEDR[3]     ; 6.553 ; 6.553 ; 6.553 ; 6.553 ;
+; SW[17]     ; LEDR[4]     ; 6.866 ; 6.866 ; 6.866 ; 6.866 ;
+; SW[17]     ; LEDR[5]     ; 6.843 ; 6.843 ; 6.843 ; 6.843 ;
+; SW[17]     ; LEDR[6]     ; 6.377 ; 6.377 ; 6.377 ; 6.377 ;
+; SW[17]     ; LEDR[7]     ; 7.044 ; 7.044 ; 7.044 ; 7.044 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.583  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  CLOCK_50        ; -2.583  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -74.256 ; 0.0   ; 0.0      ; 0.0     ; -52.38              ;
+;  CLOCK_50        ; -74.256 ; 0.000 ; N/A      ; N/A     ; -52.380             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; LCD_DATA[*]  ; CLOCK_50   ; 6.336 ; 6.336 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 6.210 ; 6.210 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 6.336 ; 6.336 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 6.053 ; 6.053 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 6.061 ; 6.061 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 6.033 ; 6.033 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 6.055 ; 6.055 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 6.053 ; 6.053 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 6.336 ; 6.336 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 6.247 ; 6.247 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 6.340 ; 6.340 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; LCD_DATA[*]  ; CLOCK_50   ; 3.425 ; 3.425 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 3.564 ; 3.564 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 3.445 ; 3.445 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 3.447 ; 3.447 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 3.425 ; 3.425 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 3.439 ; 3.439 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 3.445 ; 3.445 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 3.570 ; 3.570 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 3.526 ; 3.526 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 3.571 ; 3.571 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; SW[0]      ; LEDR[0]     ; 6.334  ;        ;        ; 6.334  ;
+; SW[1]      ; LEDR[1]     ; 6.183  ;        ;        ; 6.183  ;
+; SW[2]      ; LEDR[2]     ; 6.178  ;        ;        ; 6.178  ;
+; SW[3]      ; LEDR[3]     ; 6.396  ;        ;        ; 6.396  ;
+; SW[4]      ; LEDR[4]     ; 7.161  ;        ;        ; 7.161  ;
+; SW[5]      ; LEDR[5]     ; 7.112  ;        ;        ; 7.112  ;
+; SW[6]      ; LEDR[6]     ; 5.982  ;        ;        ; 5.982  ;
+; SW[7]      ; LEDR[7]     ; 8.706  ;        ;        ; 8.706  ;
+; SW[8]      ; LEDR[0]     ; 7.934  ;        ;        ; 7.934  ;
+; SW[9]      ; LEDR[1]     ; 8.236  ;        ;        ; 8.236  ;
+; SW[10]     ; LEDR[2]     ; 7.932  ;        ;        ; 7.932  ;
+; SW[11]     ; LEDR[3]     ; 7.745  ;        ;        ; 7.745  ;
+; SW[12]     ; LEDR[4]     ; 8.594  ;        ;        ; 8.594  ;
+; SW[13]     ; LEDR[5]     ; 12.360 ;        ;        ; 12.360 ;
+; SW[14]     ; LEDR[6]     ; 11.283 ;        ;        ; 11.283 ;
+; SW[15]     ; LEDR[7]     ; 12.507 ;        ;        ; 12.507 ;
+; SW[17]     ; LEDR[0]     ; 12.423 ; 12.423 ; 12.423 ; 12.423 ;
+; SW[17]     ; LEDR[1]     ; 12.426 ; 12.426 ; 12.426 ; 12.426 ;
+; SW[17]     ; LEDR[2]     ; 12.424 ; 12.424 ; 12.424 ; 12.424 ;
+; SW[17]     ; LEDR[3]     ; 11.888 ; 11.888 ; 11.888 ; 11.888 ;
+; SW[17]     ; LEDR[4]     ; 12.638 ; 12.638 ; 12.638 ; 12.638 ;
+; SW[17]     ; LEDR[5]     ; 12.603 ; 12.603 ; 12.603 ; 12.603 ;
+; SW[17]     ; LEDR[6]     ; 11.470 ; 11.470 ; 11.470 ; 11.470 ;
+; SW[17]     ; LEDR[7]     ; 12.743 ; 12.743 ; 12.743 ; 12.743 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; LEDR[0]     ; 3.292 ;       ;       ; 3.292 ;
+; SW[1]      ; LEDR[1]     ; 3.234 ;       ;       ; 3.234 ;
+; SW[2]      ; LEDR[2]     ; 3.214 ;       ;       ; 3.214 ;
+; SW[3]      ; LEDR[3]     ; 3.334 ;       ;       ; 3.334 ;
+; SW[4]      ; LEDR[4]     ; 3.659 ;       ;       ; 3.659 ;
+; SW[5]      ; LEDR[5]     ; 3.621 ;       ;       ; 3.621 ;
+; SW[6]      ; LEDR[6]     ; 3.158 ;       ;       ; 3.158 ;
+; SW[7]      ; LEDR[7]     ; 4.647 ;       ;       ; 4.647 ;
+; SW[8]      ; LEDR[0]     ; 4.168 ;       ;       ; 4.168 ;
+; SW[9]      ; LEDR[1]     ; 4.281 ;       ;       ; 4.281 ;
+; SW[10]     ; LEDR[2]     ; 4.101 ;       ;       ; 4.101 ;
+; SW[11]     ; LEDR[3]     ; 4.034 ;       ;       ; 4.034 ;
+; SW[12]     ; LEDR[4]     ; 4.405 ;       ;       ; 4.405 ;
+; SW[13]     ; LEDR[5]     ; 6.726 ;       ;       ; 6.726 ;
+; SW[14]     ; LEDR[6]     ; 6.281 ;       ;       ; 6.281 ;
+; SW[15]     ; LEDR[7]     ; 6.932 ;       ;       ; 6.932 ;
+; SW[17]     ; LEDR[0]     ; 6.844 ; 6.844 ; 6.844 ; 6.844 ;
+; SW[17]     ; LEDR[1]     ; 6.833 ; 6.833 ; 6.833 ; 6.833 ;
+; SW[17]     ; LEDR[2]     ; 6.816 ; 6.816 ; 6.816 ; 6.816 ;
+; SW[17]     ; LEDR[3]     ; 6.553 ; 6.553 ; 6.553 ; 6.553 ;
+; SW[17]     ; LEDR[4]     ; 6.866 ; 6.866 ; 6.866 ; 6.866 ;
+; SW[17]     ; LEDR[5]     ; 6.843 ; 6.843 ; 6.843 ; 6.843 ;
+; SW[17]     ; LEDR[6]     ; 6.377 ; 6.377 ; 6.377 ; 6.377 ;
+; SW[17]     ; LEDR[7]     ; 7.044 ; 7.044 ; 7.044 ; 7.044 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 775      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 775      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 18    ; 18   ;
+; Unconstrained Input Port Paths  ; 75    ; 75   ;
+; Unconstrained Output Ports      ; 18    ; 18   ;
+; Unconstrained Output Port Paths ; 34    ; 34   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Feb 04 17:30:13 2024
+Info: Command: quartus_sta Mod_Teste -c Mod_Teste
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Mod_Teste.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.583
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.583       -74.256 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -52.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.681
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.681       -12.183 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -52.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4540 megabytes
+    Info: Processing ended: Sun Feb 04 17:30:14 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

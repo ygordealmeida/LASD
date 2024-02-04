@@ -1,0 +1,8 @@
+module Mux_2x1 #(parameter N=8) 
+(input [N-1:0] i0,i1, 
+input sel, 
+output[N-1:0] out);
+
+assign out = (sel==2'b00)? i0 : i1; //Se Sel for 0 atribui a out o valor de i0
+
+endmodule
