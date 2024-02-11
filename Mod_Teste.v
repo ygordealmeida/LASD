@@ -34,7 +34,17 @@ LCD_TEST MyLCD (
 .LCD_RS ( LCD_RS )
 );
 //---------- modifique a partir daqui --------
-mux_2x1 #(.N(8)) Inst1 (.it0(SW[7:0]), .it1(SW[15:8]), .sel(SW[17]), .out(LEDR[7:0]) );
+
+//mux_2x1 #(.N(8)) Inst1 (.it0(SW[7:0]), .it1(SW[15:8]), .sel(SW[17]), .out(LEDR[7:0]) );
+
+wire clock;
+wire [4:0] valor;
+
+frequency_divider divisor (.clock_50Mhz(CLOCK_50), .clock_1hz(clock) );
+
+counter_0x9 contador ( .clk(clock), .rst(KEY[1]), .value(valor) );
+
+decoder_7segments  decodificador (.hex_input(valor), .segment_out(HEX4[0:6]));
 
 endmodule
 

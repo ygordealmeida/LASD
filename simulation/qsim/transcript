@@ -28,6 +28,5 @@
 # Loading work.Mod_Teste_vlg_sample_tst
 # Loading work.Mod_Teste_vlg_check_tst
 # Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
-# Simulation passed !
-# ** Note: $finish    : Mod_Teste.vt(515)
-#    Time: 1 us  Iteration: 0  Instance: /Mod_Teste_vlg_vec_tst/tb_out
+# ** Error: (vsim-3601) Iteration limit reached at time 50 ns.
+# 

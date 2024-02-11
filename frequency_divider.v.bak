@@ -1,0 +1,10 @@
+module frequency_divider
+(input clock_50Mhz,
+output clock_1hz);
+
+wire counter [25:0] //São necessários 26 bits para armazenar a contagem do clock_
+counter = 1'b0
+//always @(clock_50Mhz)
+
+	//if (counter)
+	
