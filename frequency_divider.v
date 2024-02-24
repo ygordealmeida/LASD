@@ -7,7 +7,7 @@ reg [25:0] counter ; //São necessários 26 bits para armazenar a contagem do cl
 always @ (posedge clock_50Mhz)
 begin
 
-	if (counter==50000000)
+	if (counter==25000000)
 	begin
 	clock_1hz = ~clock_1hz;
 	counter =0;

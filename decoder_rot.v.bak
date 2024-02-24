@@ -1,0 +1,25 @@
+module decoder_rot
+(input [3:0] hex_input,
+output reg [0:6] segment_out0, segment_out1, segment_out2, segment_out3);
+
+always @ (hex_input) begin
+	case (hex_input)
+		4'h0 : segment_out0 =  7'b0111111; 01111111
+		4'h1 : segment_out1 =  7'b0111111;
+		4'h2 : segment_out2 =  7'b0111111;
+		4'h3 : segment_out3 =  7'b0111111;
+		4'h4 : segment_out3 =  7'b1011111;
+		4'h5 : segment_out3 =  7'b1101111;
+		4'h6 : segment_out3 =  7'b1110111;
+		4'h7 : segment_out2 =  7'b1110111;
+		4'h8 : segment_out1 =  7'b1110111;
+		4'h9 : segment_out0 =  7'b1110111;
+		4'hA : segment_out0 =  7'b1111011;
+		4'hB : segment_out0 =  7'b1111101;
+	
+	default : segment_out = 1111111;
+	
+	endcase
+	end
+	
+endmodule

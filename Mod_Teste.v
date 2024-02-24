@@ -40,11 +40,27 @@ LCD_TEST MyLCD (
 wire clock;
 wire [4:0] valor;
 
-frequency_divider divisor (.clock_50Mhz(CLOCK_50), .clock_1hz(clock) );
 
-counter_0x9 contador ( .clk(clock), .rst(KEY[1]), .value(valor) );
+//QUESTAO 3:
 
-decoder_7segments  decodificador (.hex_input(valor), .segment_out(HEX4[0:6]));
+//frequency_divider divisor (.clock_50Mhz(CLOCK_50), .clock_1hz(clock) );
+
+//counter_0x9 contador ( .clk(clock), .rst(KEY[1]), .value(valor) );
+
+//decoder_7segments  decodificador (.hex_input(valor), .segment_out(HEX4[0:6]));  
+
+
+// QUESTAO 1:
+//decoder_7segments testdecodificador (.hex_input(SW[11:8]), .segment_out(HEX3[0:6]));
+
+// QUESTAO 2:
+//frequency_divider divisor (.clock_50Mhz(CLOCK_50), .clock_1hz(LEDG[0]) );  ,
+
+//DESAFIO:
+
+counter_rot contador ( .clk(clock), .rst(KEY[1]), .value(valor) );
+decoder_rot  decodificador (.hex_input(valor), .segment_out0(HEX3[0:6]), .segment_out1(HEX2[0:6]), .segment_out2(HEX1[0:6]) , .segment_out3(HEX0[0:6]) );
+frequency_rot divisor (.clock_50Mhz(CLOCK_50), .clock_1hz(clock) );
+
 
 endmodule
-

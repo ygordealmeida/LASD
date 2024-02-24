@@ -23,41 +23,41 @@ SW[14] => ~NO_FANOUT~
 SW[15] => ~NO_FANOUT~
 SW[16] => ~NO_FANOUT~
 SW[17] => ~NO_FANOUT~
-HEX0[6] <= <GND>
-HEX0[5] <= <GND>
-HEX0[4] <= <GND>
-HEX0[3] <= <GND>
-HEX0[2] <= <GND>
-HEX0[1] <= <GND>
-HEX0[0] <= <GND>
-HEX1[6] <= <GND>
-HEX1[5] <= <GND>
-HEX1[4] <= <GND>
-HEX1[3] <= <GND>
-HEX1[2] <= <GND>
-HEX1[1] <= <GND>
-HEX1[0] <= <GND>
-HEX2[6] <= <GND>
-HEX2[5] <= <GND>
-HEX2[4] <= <GND>
-HEX2[3] <= <GND>
-HEX2[2] <= <GND>
-HEX2[1] <= <GND>
-HEX2[0] <= <GND>
-HEX3[6] <= <GND>
-HEX3[5] <= <GND>
-HEX3[4] <= <GND>
-HEX3[3] <= <GND>
-HEX3[2] <= <GND>
-HEX3[1] <= <GND>
-HEX3[0] <= <GND>
-HEX4[6] <= decoder_7segments:decodificador.segment_out
-HEX4[5] <= decoder_7segments:decodificador.segment_out
-HEX4[4] <= decoder_7segments:decodificador.segment_out
-HEX4[3] <= decoder_7segments:decodificador.segment_out
-HEX4[2] <= decoder_7segments:decodificador.segment_out
-HEX4[1] <= decoder_7segments:decodificador.segment_out
-HEX4[0] <= decoder_7segments:decodificador.segment_out
+HEX0[6] <= decoder_rot:decodificador.segment_out3
+HEX0[5] <= decoder_rot:decodificador.segment_out3
+HEX0[4] <= decoder_rot:decodificador.segment_out3
+HEX0[3] <= decoder_rot:decodificador.segment_out3
+HEX0[2] <= decoder_rot:decodificador.segment_out3
+HEX0[1] <= decoder_rot:decodificador.segment_out3
+HEX0[0] <= decoder_rot:decodificador.segment_out3
+HEX1[6] <= decoder_rot:decodificador.segment_out2
+HEX1[5] <= decoder_rot:decodificador.segment_out2
+HEX1[4] <= decoder_rot:decodificador.segment_out2
+HEX1[3] <= decoder_rot:decodificador.segment_out2
+HEX1[2] <= decoder_rot:decodificador.segment_out2
+HEX1[1] <= decoder_rot:decodificador.segment_out2
+HEX1[0] <= decoder_rot:decodificador.segment_out2
+HEX2[6] <= decoder_rot:decodificador.segment_out1
+HEX2[5] <= decoder_rot:decodificador.segment_out1
+HEX2[4] <= decoder_rot:decodificador.segment_out1
+HEX2[3] <= decoder_rot:decodificador.segment_out1
+HEX2[2] <= decoder_rot:decodificador.segment_out1
+HEX2[1] <= decoder_rot:decodificador.segment_out1
+HEX2[0] <= decoder_rot:decodificador.segment_out1
+HEX3[6] <= decoder_rot:decodificador.segment_out0
+HEX3[5] <= decoder_rot:decodificador.segment_out0
+HEX3[4] <= decoder_rot:decodificador.segment_out0
+HEX3[3] <= decoder_rot:decodificador.segment_out0
+HEX3[2] <= decoder_rot:decodificador.segment_out0
+HEX3[1] <= decoder_rot:decodificador.segment_out0
+HEX3[0] <= decoder_rot:decodificador.segment_out0
+HEX4[6] <= <GND>
+HEX4[5] <= <GND>
+HEX4[4] <= <GND>
+HEX4[3] <= <GND>
+HEX4[2] <= <GND>
+HEX4[1] <= <GND>
+HEX4[0] <= <GND>
 HEX5[6] <= <GND>
 HEX5[5] <= <GND>
 HEX5[4] <= <GND>
@@ -441,7 +441,69 @@ LCD_EN <= LCD_EN~reg0.DB_MAX_OUTPUT_PORT_TYPE
 LCD_RS <= iRS.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Mod_Teste|frequency_divider:divisor
+|Mod_Teste|counter_rot:contador
+clk => value[0]~reg0.CLK
+clk => value[1]~reg0.CLK
+clk => value[2]~reg0.CLK
+clk => value[3]~reg0.CLK
+rst => value[0]~reg0.ACLR
+rst => value[1]~reg0.ACLR
+rst => value[2]~reg0.ACLR
+rst => value[3]~reg0.ACLR
+value[0] <= value[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+value[1] <= value[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+value[2] <= value[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+value[3] <= value[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mod_Teste|decoder_rot:decodificador
+hex_input[0] => Decoder0.IN3
+hex_input[0] => Mux0.IN19
+hex_input[0] => Mux1.IN19
+hex_input[0] => Mux2.IN19
+hex_input[1] => Decoder0.IN2
+hex_input[1] => Mux0.IN18
+hex_input[1] => Mux1.IN18
+hex_input[1] => Mux2.IN18
+hex_input[2] => Decoder0.IN1
+hex_input[2] => Mux0.IN17
+hex_input[2] => Mux1.IN17
+hex_input[2] => Mux2.IN17
+hex_input[3] => Decoder0.IN0
+hex_input[3] => Mux0.IN16
+hex_input[3] => Mux1.IN16
+hex_input[3] => Mux2.IN16
+segment_out0[6] <= <VCC>
+segment_out0[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+segment_out0[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+segment_out0[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+segment_out0[2] <= <VCC>
+segment_out0[1] <= <VCC>
+segment_out0[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+segment_out1[6] <= <VCC>
+segment_out1[5] <= <VCC>
+segment_out1[4] <= <VCC>
+segment_out1[3] <= segment_out1[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segment_out1[2] <= <VCC>
+segment_out1[1] <= <VCC>
+segment_out1[0] <= segment_out1[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+segment_out2[6] <= <VCC>
+segment_out2[5] <= <VCC>
+segment_out2[4] <= <VCC>
+segment_out2[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+segment_out2[2] <= <VCC>
+segment_out2[1] <= <VCC>
+segment_out2[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+segment_out3[6] <= <VCC>
+segment_out3[5] <= <VCC>
+segment_out3[4] <= <VCC>
+segment_out3[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+segment_out3[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+segment_out3[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+segment_out3[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mod_Teste|frequency_rot:divisor
 clock_50Mhz => counter[0].CLK
 clock_50Mhz => counter[1].CLK
 clock_50Mhz => counter[2].CLK
@@ -470,34 +532,5 @@ clock_50Mhz => counter[24].CLK
 clock_50Mhz => counter[25].CLK
 clock_50Mhz => clock_1hz~reg0.CLK
 clock_1hz <= clock_1hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Mod_Teste|counter_0x9:contador
-clk => value[0]~reg0.CLK
-clk => value[1]~reg0.CLK
-clk => value[2]~reg0.CLK
-clk => value[3]~reg0.CLK
-rst => value[0]~reg0.ACLR
-rst => value[1]~reg0.ACLR
-rst => value[2]~reg0.ACLR
-rst => value[3]~reg0.ACLR
-value[0] <= value[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-value[1] <= value[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-value[2] <= value[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-value[3] <= value[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Mod_Teste|decoder_7segments:decodificador
-hex_input[0] => Decoder0.IN3
-hex_input[1] => Decoder0.IN2
-hex_input[2] => Decoder0.IN1
-hex_input[3] => Decoder0.IN0
-segment_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-segment_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-segment_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-segment_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-segment_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-segment_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-segment_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
