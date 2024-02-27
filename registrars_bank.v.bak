@@ -1,0 +1,10 @@
+module registrars_bank 
+(input [7:0] wd3,
+[2:0] wa3,
+we3,
+clk,
+[2:0] ra1,
+[2:0] ra2,
+rst,
+output [7:0] rd1,
+[7:0] rd2) 

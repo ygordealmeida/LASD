@@ -37,8 +37,8 @@ LCD_TEST MyLCD (
 
 //mux_2x1 #(.N(8)) Inst1 (.it0(SW[7:0]), .it1(SW[15:8]), .sel(SW[17]), .out(LEDR[7:0]) );
 
-wire clock;
-wire [4:0] valor;
+//wire clock;
+//wire [4:0] valor;
 
 
 //QUESTAO 3:
@@ -58,9 +58,19 @@ wire [4:0] valor;
 
 //DESAFIO:
 
-counter_rot contador ( .clk(clock), .rst(KEY[1]), .value(valor) );
-decoder_rot  decodificador (.hex_input(valor), .segment_out0(HEX3[0:6]), .segment_out1(HEX2[0:6]), .segment_out2(HEX1[0:6]) , .segment_out3(HEX0[0:6]) );
-frequency_rot divisor (.clock_50Mhz(CLOCK_50), .clock_1hz(clock) );
+//counter_rot contador ( .clk(clock), .rst(KEY[1]), .value(valor) );
+//decoder_rot  decodificador (.hex_input(valor), .segment_out0(HEX3[0:6]), .segment_out1(HEX2[0:6]), .segment_out2(HEX1[0:6]) , .segment_out3(HEX0[0:6]) );
+//frequency_rot divisor (.clock_50Mhz(CLOCK_50), .clock_1hz(clock) );
+
+// --------SPRINT 3 ---------
+
+registrars_bank registradores(.wd3(SW[7:0]), .wa3(SW[16:14]), .we3(SW[17]), .clk(KEY[1]), .ra1(SW[13:11]), .ra2(SW[10:8]),
+ .rst(KEY[2]),
+.rd1(w_d0x0), .rd2(w_d0x1) ) ;
+assign LEDG[8] = ~KEY[1];
+decoder_7segments primeiro (.hex_input(SW[3:0]), .segment_out(HEX0[0:6]));
+decoder_7segments segundo (.hex_input(SW[7:4]), .segment_out(HEX1[0:6]));
+
 
 
 endmodule
