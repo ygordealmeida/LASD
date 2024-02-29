@@ -63,14 +63,33 @@ LCD_TEST MyLCD (
 //frequency_rot divisor (.clock_50Mhz(CLOCK_50), .clock_1hz(clock) );
 
 // --------SPRINT 3 ---------
-
+/*
 registrars_bank registradores(.wd3(SW[7:0]), .wa3(SW[16:14]), .we3(SW[17]), .clk(KEY[1]), .ra1(SW[13:11]), .ra2(SW[10:8]),
- .rst(KEY[2]),
+.rst(KEY[2]),
 .rd1(w_d0x0), .rd2(w_d0x1) ) ;
 assign LEDG[8] = ~KEY[1];
 decoder_7segments primeiro (.hex_input(SW[3:0]), .segment_out(HEX0[0:6]));
 decoder_7segments segundo (.hex_input(SW[7:4]), .segment_out(HEX1[0:6]));
+assign LEDG[5] = ~KEY[2];
+*/
 
 
+// ---------SPRINT 4-ULA ----------
+wire [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3;
+registrars_bank registradores(.wd3(SW[7:0]), .wa3(SW[16:14]), .we3(1'b1), .clk(KEY[1]), .ra1(SW[13:11]), .ra2(3'b010),
+.rst(KEY[2]),
+.rd1(w_rd1SrcA), .rd2(w_rd2) ) ;
+
+mux_2x1 #(.N(8)) MuxULASrc (.it0(w_rd2), .it1(8'h07), .sel(SW[17]), .out(w_SrcB) );
+
+ULA ulinha (.SrcA(w_rd1SrcA), .SrcB(w_SrcB),
+.ULAControl(SW[10:8]),
+.Z(LEDG[0]),
+.ULAResult(w_ULAResultWd3));
+
+assign w_rd1SrcA = w_d0x0;
+assign w_rd2 = w_d1x0;
+assign w_SrcB = w_d1x1;
+assign w_ULAResultWd3 = w_d0x4; 
 
 endmodule

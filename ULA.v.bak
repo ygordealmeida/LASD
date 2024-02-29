@@ -1,0 +1,6 @@
+module ULA (input [7:0] SrcA, SrcB,
+input [2:0] ULAControl,
+output Z,
+output [7:0] ULAResult)
+
+endmodule
