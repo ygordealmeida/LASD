@@ -1,0 +1,28 @@
+module Data_mem (input [7:0] A, WD,
+input rst, WE, clk,
+output [7:0] RD);
+
+reg [7:0] armazen [255:0];
+integer i;
+
+always @ (posedge clk or negedge rst)
+begin
+		if (!rst) // EM verilog nao podemos mudar todos os arrays de uma vez
+		begin
+			for(i=0;i<255;i=i+1)
+			begin
+			armazen[i]<=0;
+			end
+
+		end
+		else if (WE==1)
+			armazen[A]<=WD;
+		
+
+end
+
+
+
+assign RD = armazen[A];
+
+endmodule

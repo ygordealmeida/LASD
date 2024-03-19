@@ -5,12 +5,14 @@ output reg [7:0] ULAResult);
 
 always @(*) begin		
 	case (ULAControl) // PERGUNTAR SOBRE O OPERADOR <= EM VISTA QUE A ULA É COMBINACIONAL, MAS PRECISA DE UM REG PRA MONTAR ELA
-		3'b000 : ULAResult <= SrcA + SrcB; 
-		3'b001 : ULAResult <= SrcA + (~SrcB) +1;
-		3'b010 : ULAResult <= SrcA & SrcB;
-		3'b100 : ULAResult <= ~(SrcA | SrcB);
-		3'b101 : ULAResult <= (SrcA<SrcB)?1:0;
-		default :	ULAResult <= 0;
+		3'b000 : ULAResult = SrcA + SrcB; 
+		3'b001 : ULAResult = SrcA + (~SrcB) +1;
+		3'b010 : ULAResult = SrcA & SrcB;
+		//3'b100 : ULAResult <= ~(SrcA | SrcB); OPERAÇÃO REMOVIDA 
+		3'b101 : ULAResult = (SrcA<SrcB)?1:0;
+		3'b011: ULAResult = SrcA | SrcB;
+      3'b100: ULAResult = SrcA ^ SrcB;
+		default :	ULAResult = 0;
 	endcase
 	
 end

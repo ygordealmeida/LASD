@@ -2,9 +2,25 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow Model Setup 'KEY[1]'
+Slack : -14.756
+TNS   : -23333.514
+
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -8.868
-TNS   : -125.462
+Slack : -7.080
+TNS   : -124.829
+
+Type  : Slow Model Setup 'Program_Counter:CONTADOR_PROGRAMA|PC[2]'
+Slack : -1.845
+TNS   : -14.529
+
+Type  : Slow Model Hold 'KEY[1]'
+Slack : -2.443
+TNS   : -12.649
+
+Type  : Slow Model Hold 'Program_Counter:CONTADOR_PROGRAMA|PC[2]'
+Slack : -2.307
+TNS   : -13.031
 
 Type  : Slow Model Hold 'CLOCK_50'
 Slack : 0.391
@@ -16,15 +32,35 @@ TNS   : -52.380
 
 Type  : Slow Model Minimum Pulse Width 'KEY[1]'
 Slack : -1.222
-TNS   : -57.222
+TNS   : -2119.222
+
+Type  : Slow Model Minimum Pulse Width 'Program_Counter:CONTADOR_PROGRAMA|PC[2]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'KEY[1]'
+Slack : -5.909
+TNS   : -9155.785
 
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : -3.238
-TNS   : -33.193
+Slack : -2.426
+TNS   : -33.611
+
+Type  : Fast Model Setup 'Program_Counter:CONTADOR_PROGRAMA|PC[2]'
+Slack : -0.300
+TNS   : -1.500
+
+Type  : Fast Model Hold 'KEY[1]'
+Slack : -1.489
+TNS   : -7.794
+
+Type  : Fast Model Hold 'Program_Counter:CONTADOR_PROGRAMA|PC[2]'
+Slack : -1.308
+TNS   : -7.977
 
 Type  : Fast Model Hold 'CLOCK_50'
-Slack : 0.215
-TNS   : 0.000
+Slack : -0.300
+TNS   : -0.426
 
 Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
 Slack : -1.380
@@ -32,6 +68,10 @@ TNS   : -52.380
 
 Type  : Fast Model Minimum Pulse Width 'KEY[1]'
 Slack : -1.222
-TNS   : -57.222
+TNS   : -2119.222
+
+Type  : Fast Model Minimum Pulse Width 'Program_Counter:CONTADOR_PROGRAMA|PC[2]'
+Slack : 0.500
+TNS   : 0.000
 
 ------------------------------------------------------------
