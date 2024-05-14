@@ -15,5 +15,7 @@ tem caminhos comumente conhecidos, seja de realizar uma operação entre registr
 Por fim, acrescenta-se a instrução JALR, que em condições especificas (jalr zero, ra, 0) é a instrução JR, ela faz PC = ra (registrador x1 em nossa arquitetura).
 Para sua adição cria-se um novo sinal de controle "Jr", esse sinal é ativado quando
 a instrução é lida, tal sinal é usado como seleção em um novo mux, que escolhe entre rd1SrcA e PC, a saída desse mux é levada ao cálculo de ImmPC, que agora pode realizar
-a soma de PC + Imm, ou  rd1SrcA + Imm. Assim, quando a instrução Jr for lida ela ira salvar em PC o valor de ra + zero.
+a soma de PC + Imm, ou  rd1SrcA + Imm, é importante mencionar que essa instrução é do tipo I o qual ja possuímos possibilidade de extensão.
+Assim, quando a instrução Jr for lida ela ira salvar em PC o valor de ra + zero. A partir de agora, podemos utilizar códigos de funções em nosso processador, 
+saltando e retornando para diferentes endereços.
 
