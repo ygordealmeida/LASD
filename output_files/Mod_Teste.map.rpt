@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Mod_Teste
-Sun Mar 17 15:42:29 2024
+Tue May 14 13:43:21 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -21,13 +21,17 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
  14. Parameter Settings for User Entity Instance: LCD_TEST:MyLCD
  15. Parameter Settings for User Entity Instance: LCD_TEST:MyLCD|LCD_Controller:u0
- 16. Parameter Settings for User Entity Instance: mux_2x1:Inst1
- 17. Parameter Settings for User Entity Instance: mux_2x1:Inst2
- 18. Parameter Settings for User Entity Instance: mux_2x1:MuxResSrc
- 19. Port Connectivity Checks: "mux_2x1:Inst1"
- 20. Port Connectivity Checks: "registrars_bank:registradores"
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+ 16. Parameter Settings for User Entity Instance: mux_2x1:MuxJr
+ 17. Parameter Settings for User Entity Instance: mux_4x1:MuxImmSrc
+ 18. Parameter Settings for User Entity Instance: mux_2x1:MuxULASrc
+ 19. Parameter Settings for User Entity Instance: mux_4x1:MuxResSrc
+ 20. Parameter Settings for User Entity Instance: mux_2x1:MuxPCSrc
+ 21. Port Connectivity Checks: "mux_4x1:MuxResSrc"
+ 22. Port Connectivity Checks: "mux_4x1:MuxImmSrc"
+ 23. Port Connectivity Checks: "registrars_bank:registradores"
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -53,15 +57,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 17 15:42:29 2024           ;
+; Analysis & Synthesis Status        ; Successful - Tue May 14 13:43:21 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Mod_Teste                                       ;
 ; Top-level Entity Name              ; Mod_Teste                                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 4,199                                           ;
-;     Total combinational functions  ; 2,110                                           ;
-;     Dedicated logic registers      ; 2,169                                           ;
-; Total registers                    ; 2169                                            ;
+; Total logic elements               ; 4,372                                           ;
+;     Total combinational functions  ; 2,275                                           ;
+;     Dedicated logic registers      ; 2,179                                           ;
+; Total registers                    ; 2179                                            ;
 ; Total pins                         ; 194                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -166,23 +170,26 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                            ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
-; Mod_Teste.v                      ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/Mod_Teste.v          ;         ;
-; LCD_TEST2.v                      ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/LCD_TEST2.v          ;         ;
-; LCD_Controller.v                 ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/LCD_Controller.v     ;         ;
-; mux2x1.v                         ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/mux2x1.v             ;         ;
-; decoder_7segments.v              ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/decoder_7segments.v  ;         ;
-; registrars_bank.v                ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/registrars_bank.v    ;         ;
-; ULA.v                            ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/ULA.v                ;         ;
-; Control Unit.v                   ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/Control Unit.v       ;         ;
-; Program Counter.v                ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/Program Counter.v    ;         ;
-; Instruction_Memory.v             ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/Instruction_Memory.v ;         ;
-; Data_mem.v                       ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Documents/GitHub/LASD/Data_mem.v           ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
+; Mod_Teste.v                      ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/Mod_Teste.v          ;         ;
+; LCD_TEST2.v                      ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/LCD_TEST2.v          ;         ;
+; LCD_Controller.v                 ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/LCD_Controller.v     ;         ;
+; mux2x1.v                         ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/mux2x1.v             ;         ;
+; decoder_7segments.v              ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/decoder_7segments.v  ;         ;
+; registrars_bank.v                ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/registrars_bank.v    ;         ;
+; ULA.v                            ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/ULA.v                ;         ;
+; Control Unit.v                   ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/Control Unit.v       ;         ;
+; Program Counter.v                ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/Program Counter.v    ;         ;
+; Instruction_Memory.v             ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/Instruction_Memory.v ;         ;
+; Data_mem.v                       ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/Data_mem.v           ;         ;
+; mux_4x1.v                        ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/mux_4x1.v            ;         ;
+; parallel_out.v                   ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/parallel_out.v       ;         ;
+; parallel_in.v                    ; yes             ; User Verilog HDL File  ; C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/parallel_in.v        ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------+
@@ -190,28 +197,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 4,199  ;
+; Estimated Total logic elements              ; 4,372  ;
 ;                                             ;        ;
-; Total combinational functions               ; 2110   ;
+; Total combinational functions               ; 2275   ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 1847   ;
-;     -- 3 input functions                    ; 151    ;
-;     -- <=2 input functions                  ; 112    ;
+;     -- 4 input functions                    ; 1708   ;
+;     -- 3 input functions                    ; 456    ;
+;     -- <=2 input functions                  ; 111    ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 2005   ;
-;     -- arithmetic mode                      ; 105    ;
+;     -- normal mode                          ; 2147   ;
+;     -- arithmetic mode                      ; 128    ;
 ;                                             ;        ;
-; Total registers                             ; 2169   ;
-;     -- Dedicated logic registers            ; 2169   ;
+; Total registers                             ; 2179   ;
+;     -- Dedicated logic registers            ; 2179   ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
 ; I/O pins                                    ; 194    ;
 ; Embedded Multiplier 9-bit elements          ; 0      ;
 ; Maximum fan-out node                        ; KEY[1] ;
-; Maximum fan-out                             ; 2119   ;
-; Total fan-out                               ; 16743  ;
-; Average fan-out                             ; 3.74   ;
+; Maximum fan-out                             ; 2129   ;
+; Total fan-out                               ; 17150  ;
+; Average fan-out                             ; 3.69   ;
 +---------------------------------------------+--------+
 
 
@@ -220,19 +227,26 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
-; |Mod_Teste                                ; 2110 (1)          ; 2169 (0)     ; 0           ; 0            ; 0       ; 0         ; 194  ; 0            ; |Mod_Teste                                      ; work         ;
-;    |Data_mem:memoria_dados|               ; 287 (287)         ; 2048 (2048)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|Data_mem:memoria_dados               ; work         ;
-;    |Instruction_Memory:memoria_instrucao| ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|Instruction_Memory:memoria_instrucao ; work         ;
-;    |LCD_TEST:MyLCD|                       ; 316 (295)         ; 51 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|LCD_TEST:MyLCD                       ; work         ;
+; |Mod_Teste                                ; 2275 (15)         ; 2179 (0)     ; 0           ; 0            ; 0       ; 0         ; 194  ; 0            ; |Mod_Teste                                      ; work         ;
+;    |ControlUnit:unidade_controle|         ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|ControlUnit:unidade_controle         ; work         ;
+;    |Data_mem:memoria_dados|               ; 288 (288)         ; 2048 (2048)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|Data_mem:memoria_dados               ; work         ;
+;    |Instruction_Memory:memoria_instrucao| ; 35 (35)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|Instruction_Memory:memoria_instrucao ; work         ;
+;    |LCD_TEST:MyLCD|                       ; 311 (290)         ; 51 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|LCD_TEST:MyLCD                       ; work         ;
 ;       |LCD_Controller:u0|                 ; 21 (21)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0     ; work         ;
-;    |Program_Counter:CONTADOR_PROGRAMA|    ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|Program_Counter:CONTADOR_PROGRAMA    ; work         ;
-;    |ULA:ulinha|                           ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|ULA:ulinha                           ; work         ;
-;    |decoder_7segments:primeiro|           ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|decoder_7segments:primeiro           ; work         ;
+;    |Program_Counter:CONTADOR_PROGRAMA|    ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|Program_Counter:CONTADOR_PROGRAMA    ; work         ;
+;    |ULA:ulinha|                           ; 89 (89)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|ULA:ulinha                           ; work         ;
+;    |decoder_7segments:primeiro|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|decoder_7segments:primeiro           ; work         ;
 ;    |decoder_7segments:quinto|             ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|decoder_7segments:quinto             ; work         ;
-;    |decoder_7segments:segundo|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|decoder_7segments:segundo            ; work         ;
-;    |mux_2x1:Inst2|                        ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|mux_2x1:Inst2                        ; work         ;
-;    |mux_2x1:MuxResSrc|                    ; 1372 (1372)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|mux_2x1:MuxResSrc                    ; work         ;
-;    |registrars_bank:registradores|        ; 57 (57)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|registrars_bank:registradores        ; work         ;
+;    |decoder_7segments:segundo|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|decoder_7segments:segundo            ; work         ;
+;    |decoder_7segments:terceiro|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|decoder_7segments:terceiro           ; work         ;
+;    |decoder_7segments:zero|               ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|decoder_7segments:zero               ; work         ;
+;    |mux_2x1:MuxJr|                        ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|mux_2x1:MuxJr                        ; work         ;
+;    |mux_2x1:MuxPCSrc|                     ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|mux_2x1:MuxPCSrc                     ; work         ;
+;    |mux_2x1:MuxULASrc|                    ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|mux_2x1:MuxULASrc                    ; work         ;
+;    |mux_4x1:MuxImmSrc|                    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|mux_4x1:MuxImmSrc                    ; work         ;
+;    |mux_4x1:MuxResSrc|                    ; 1377 (1377)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|mux_4x1:MuxResSrc                    ; work         ;
+;    |parallel_out:saida|                   ; 4 (4)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|parallel_out:saida                   ; work         ;
+;    |registrars_bank:registradores|        ; 79 (79)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|registrars_bank:registradores        ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -268,40 +282,44 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+----------------------------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal                          ; Free of Timing Hazards ;
 +-----------------------------------------------------+----------------------------------------------+------------------------+
-; Instruction_Memory:memoria_instrucao|RD[5]          ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
-; Instruction_Memory:memoria_instrucao|RD[7]          ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
+; Instruction_Memory:memoria_instrucao|RD[2]          ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
+; Instruction_Memory:memoria_instrucao|RD[3]          ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
 ; Instruction_Memory:memoria_instrucao|RD[4]          ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
+; Instruction_Memory:memoria_instrucao|RD[5]          ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
+; Instruction_Memory:memoria_instrucao|RD[6]          ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
+; Instruction_Memory:memoria_instrucao|RD[7]          ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
 ; Instruction_Memory:memoria_instrucao|RD[9]          ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
 ; Instruction_Memory:memoria_instrucao|RD[8]          ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
-; Instruction_Memory:memoria_instrucao|RD[10]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
+; Instruction_Memory:memoria_instrucao|RD[12]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
+; Instruction_Memory:memoria_instrucao|RD[13]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
+; Instruction_Memory:memoria_instrucao|RD[14]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
+; Instruction_Memory:memoria_instrucao|RD[15]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
+; Instruction_Memory:memoria_instrucao|RD[17]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
 ; Instruction_Memory:memoria_instrucao|RD[20]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
 ; Instruction_Memory:memoria_instrucao|RD[21]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
 ; Instruction_Memory:memoria_instrucao|RD[22]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
 ; Instruction_Memory:memoria_instrucao|RD[23]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
-; Instruction_Memory:memoria_instrucao|RD[25]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
-; Instruction_Memory:memoria_instrucao|RD[27]         ; Instruction_Memory:memoria_instrucao|WideOr1 ; yes                    ;
-; Number of user-specified and inferred latches = 12  ;                                              ;                        ;
+; ControlUnit:unidade_controle|Jr                     ; ControlUnit:unidade_controle|WideNor8        ; yes                    ;
+; Number of user-specified and inferred latches = 18  ;                                              ;                        ;
 +-----------------------------------------------------+----------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                            ;
-+-----------------------------------------+-----------------------------------------------------+
-; Register name                           ; Reason for Removal                                  ;
-+-----------------------------------------+-----------------------------------------------------+
-; Program_Counter:CONTADOR_PROGRAMA|PC[1] ; Merged with Program_Counter:CONTADOR_PROGRAMA|PC[0] ;
-; Program_Counter:CONTADOR_PROGRAMA|PC[0] ; Stuck at GND due to stuck port data_in              ;
-; LCD_TEST:MyLCD|mLCD_ST~8                ; Lost fanout                                         ;
-; LCD_TEST:MyLCD|mLCD_ST~9                ; Lost fanout                                         ;
-; LCD_TEST:MyLCD|mLCD_ST~10               ; Lost fanout                                         ;
-; LCD_TEST:MyLCD|mLCD_ST~11               ; Lost fanout                                         ;
-; LCD_TEST:MyLCD|mLCD_ST~12               ; Lost fanout                                         ;
-; LCD_TEST:MyLCD|mLCD_ST~13               ; Lost fanout                                         ;
-; LCD_TEST:MyLCD|LCD_Controller:u0|ST~8   ; Lost fanout                                         ;
-; LCD_TEST:MyLCD|LCD_Controller:u0|ST~9   ; Lost fanout                                         ;
-; Total Number of Removed Registers = 10  ;                                                     ;
-+-----------------------------------------+-----------------------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; LCD_TEST:MyLCD|mLCD_ST~8              ; Lost fanout        ;
+; LCD_TEST:MyLCD|mLCD_ST~9              ; Lost fanout        ;
+; LCD_TEST:MyLCD|mLCD_ST~10             ; Lost fanout        ;
+; LCD_TEST:MyLCD|mLCD_ST~11             ; Lost fanout        ;
+; LCD_TEST:MyLCD|mLCD_ST~12             ; Lost fanout        ;
+; LCD_TEST:MyLCD|mLCD_ST~13             ; Lost fanout        ;
+; LCD_TEST:MyLCD|LCD_Controller:u0|ST~8 ; Lost fanout        ;
+; LCD_TEST:MyLCD|LCD_Controller:u0|ST~9 ; Lost fanout        ;
+; Total Number of Removed Registers = 8 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -309,12 +327,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2169  ;
+; Total registers                              ; 2179  ;
 ; Number of registers using Synchronous Clear  ; 18    ;
-; Number of registers using Synchronous Load   ; 9     ;
-; Number of registers using Asynchronous Clear ; 2153  ;
+; Number of registers using Synchronous Load   ; 6     ;
+; Number of registers using Asynchronous Clear ; 2163  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2155  ;
+; Number of registers using Clock Enable       ; 2165  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -324,15 +342,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|registrars_bank:registradores|register[0][3] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0|mStart      ;
-; 64:1               ; 3 bits    ; 126 LEs       ; 57 LEs               ; 69 LEs                 ; Yes        ; |Mod_Teste|LCD_TEST:MyLCD|mLCD_DATA[2]                  ;
-; 38:1               ; 2 bits    ; 50 LEs        ; 32 LEs               ; 18 LEs                 ; Yes        ; |Mod_Teste|LCD_TEST:MyLCD|mLCD_DATA[1]                  ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |Mod_Teste|registrars_bank:registradores|Mux8           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Mod_Teste|LCD_TEST:MyLCD|Mux6                          ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Mod_Teste|mux_2x1:Inst2|out[2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|registrars_bank:registradores|register[0][0] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0|oDone       ;
+; 64:1               ; 5 bits    ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |Mod_Teste|LCD_TEST:MyLCD|mLCD_DATA[1]                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Mod_Teste|registrars_bank:registradores|Mux6           ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Mod_Teste|mux_4x1:MuxImmSrc|Mux9                       ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |Mod_Teste|registrars_bank:registradores|Mux10          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Mod_Teste|LCD_TEST:MyLCD|Mux2                          ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |Mod_Teste|ULA:ulinha|Mux0                              ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; No         ; |Mod_Teste|ULA:ulinha|Mux4                              ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Mod_Teste|LCD_TEST:MyLCD|Selector1                     ;
-; 257:1              ; 8 bits    ; 1368 LEs      ; 1368 LEs             ; 0 LEs                  ; No         ; |Mod_Teste|mux_2x1:MuxResSrc|out[7]                     ;
+; 260:1              ; 8 bits    ; 1384 LEs      ; 1376 LEs             ; 8 LEs                  ; No         ; |Mod_Teste|mux_4x1:MuxResSrc|Mux1                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
@@ -362,17 +382,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux_2x1:Inst1 ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; N              ; 12    ; Signed Integer                    ;
-+----------------+-------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux_2x1:Inst2 ;
+; Parameter Settings for User Entity Instance: mux_2x1:MuxJr ;
 +----------------+-------+-----------------------------------+
 ; Parameter Name ; Value ; Type                              ;
 +----------------+-------+-----------------------------------+
@@ -382,7 +392,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux_2x1:MuxResSrc ;
+; Parameter Settings for User Entity Instance: mux_4x1:MuxImmSrc ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; N              ; 12    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2x1:MuxULASrc ;
 +----------------+-------+---------------------------------------+
 ; Parameter Name ; Value ; Type                                  ;
 +----------------+-------+---------------------------------------+
@@ -391,13 +411,45 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux_2x1:Inst1"                                                                                                           ;
-+------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                  ;
-+------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
-; out  ; Output ; Warning  ; Output or bidir port (12 bits) is wider than the port expression (8 bits) it drives; bit(s) "out[11..8]" have no fanouts ;
-+------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_4x1:MuxResSrc ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; N              ; 8     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2x1:MuxPCSrc ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; N              ; 8     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "mux_4x1:MuxResSrc" ;
++------+-------+----------+---------------------+
+; Port ; Type  ; Severity ; Details             ;
++------+-------+----------+---------------------+
+; it3  ; Input ; Info     ; Stuck at GND        ;
++------+-------+----------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_4x1:MuxImmSrc"                                                                                                                                                                   ;
++--------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                                            ;
++--------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; it2[0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; it3    ; Input  ; Warning  ; Input port expression (20 bits) is wider than the input port (12 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; it3[0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; out    ; Output ; Warning  ; Output or bidir port (12 bits) is wider than the port expression (8 bits) it drives; bit(s) "out[11..8]" have no fanouts                                                           ;
++--------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -416,7 +468,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:10     ;
 +----------------+--------------+
 
 
@@ -426,7 +478,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Mar 17 15:42:22 2024
+    Info: Processing started: Tue May 14 13:43:06 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mod_Teste -c Mod_Teste
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file mod_teste.v
@@ -461,12 +513,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file instruc
     Info (12023): Found entity 1: Instruction_Memory
 Info (12021): Found 1 design units, including 1 entities, in source file data_mem.v
     Info (12023): Found entity 1: Data_mem
+Info (12021): Found 1 design units, including 1 entities, in source file mux_4x1.v
+    Info (12023): Found entity 1: mux_4x1
+Info (12021): Found 1 design units, including 1 entities, in source file frequency_divider_2hz.v
+    Info (12023): Found entity 1: frequency_divider_2HZ
+Info (12021): Found 1 design units, including 1 entities, in source file parallel_out.v
+    Info (12023): Found entity 1: parallel_out
+Info (12021): Found 1 design units, including 1 entities, in source file parallel_in.v
+    Info (12023): Found entity 1: parallel_in
 Info (12127): Elaborating entity "Mod_Teste" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at Mod_Teste.v(160): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Mod_Teste.v(148): truncated value with size 32 to match size of target (8)
 Warning (10034): Output port "LEDG[8..6]" at Mod_Teste.v(10) has no driver
 Warning (10034): Output port "LEDG[4]" at Mod_Teste.v(10) has no driver
 Warning (10034): Output port "LEDG[2..1]" at Mod_Teste.v(10) has no driver
-Warning (10034): Output port "LEDR[17..8]" at Mod_Teste.v(11) has no driver
+Warning (10034): Output port "LEDR[17..13]" at Mod_Teste.v(11) has no driver
 Warning (10034): Output port "UART_TXD" at Mod_Teste.v(13) has no driver
 Info (12128): Elaborating entity "LCD_TEST" for hierarchy "LCD_TEST:MyLCD"
 Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(60): truncated value with size 32 to match size of target (18)
@@ -474,6 +534,7 @@ Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(69): truncated va
 Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(71): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "LCD_Controller" for hierarchy "LCD_TEST:MyLCD|LCD_Controller:u0"
 Warning (10230): Verilog HDL assignment warning at LCD_Controller.v(66): truncated value with size 32 to match size of target (5)
+Info (12128): Elaborating entity "mux_2x1" for hierarchy "mux_2x1:MuxJr"
 Info (12128): Elaborating entity "registrars_bank" for hierarchy "registrars_bank:registradores"
 Warning (10240): Verilog HDL Always Construct warning at registrars_bank.v(16): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct
 Info (12128): Elaborating entity "Program_Counter" for hierarchy "Program_Counter:CONTADOR_PROGRAMA"
@@ -513,14 +574,19 @@ Info (10041): Inferred latch for "RD[29]" at Instruction_Memory.v(7)
 Info (10041): Inferred latch for "RD[30]" at Instruction_Memory.v(7)
 Info (10041): Inferred latch for "RD[31]" at Instruction_Memory.v(7)
 Info (12128): Elaborating entity "ControlUnit" for hierarchy "ControlUnit:unidade_controle"
-Info (12128): Elaborating entity "mux_2x1" for hierarchy "mux_2x1:Inst1"
+Warning (10230): Verilog HDL assignment warning at Control Unit.v(25): truncated value with size 13 to match size of target (12)
+Warning (10240): Verilog HDL Always Construct warning at Control Unit.v(9): inferring latch(es) for variable "Jr", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "Jr" at Control Unit.v(9)
+Info (12128): Elaborating entity "mux_4x1" for hierarchy "mux_4x1:MuxImmSrc"
 Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ulinha"
 Warning (10230): Verilog HDL assignment warning at ULA.v(9): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at ULA.v(12): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at ULA.v(13): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at ULA.v(20): truncated value with size 32 to match size of target (1)
-Info (12128): Elaborating entity "mux_2x1" for hierarchy "mux_2x1:Inst2"
 Info (12128): Elaborating entity "Data_mem" for hierarchy "Data_mem:memoria_dados"
 Warning (10240): Verilog HDL Always Construct warning at Data_mem.v(8): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "mux_4x1" for hierarchy "mux_4x1:MuxResSrc"
+Info (12128): Elaborating entity "parallel_out" for hierarchy "parallel_out:saida"
+Info (12128): Elaborating entity "parallel_in" for hierarchy "parallel_in:entrada"
 Info (12128): Elaborating entity "decoder_7segments" for hierarchy "decoder_7segments:setimo"
 Warning (10230): Verilog HDL assignment warning at decoder_7segments.v(24): truncated value with size 32 to match size of target (7)
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
@@ -534,27 +600,38 @@ Warning (13034): The following nodes have both tri-state and non-tri-state drive
     Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[6]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[7]" and its non-tri-state driver.
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "Instruction_Memory:memoria_instrucao|RD[10]" merged with LATCH primitive "Instruction_Memory:memoria_instrucao|RD[5]"
-    Info (13026): Duplicate LATCH primitive "Instruction_Memory:memoria_instrucao|RD[27]" merged with LATCH primitive "Instruction_Memory:memoria_instrucao|RD[4]"
-    Info (13026): Duplicate LATCH primitive "Instruction_Memory:memoria_instrucao|RD[25]" merged with LATCH primitive "Instruction_Memory:memoria_instrucao|RD[4]"
-Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[6]
-Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[6]
+    Info (13026): Duplicate LATCH primitive "Instruction_Memory:memoria_instrucao|RD[6]" merged with LATCH primitive "Instruction_Memory:memoria_instrucao|RD[2]"
+    Info (13026): Duplicate LATCH primitive "Instruction_Memory:memoria_instrucao|RD[21]" merged with LATCH primitive "Instruction_Memory:memoria_instrucao|RD[9]"
+    Info (13026): Duplicate LATCH primitive "Instruction_Memory:memoria_instrucao|RD[13]" merged with LATCH primitive "Instruction_Memory:memoria_instrucao|RD[8]"
+    Info (13026): Duplicate LATCH primitive "Instruction_Memory:memoria_instrucao|RD[17]" merged with LATCH primitive "Instruction_Memory:memoria_instrucao|RD[14]"
+Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[7]
+Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[0]
 Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[7]
+Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[7]
+Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[0]
 Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[6]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[7]
 Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[6]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[7]
+Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[7]
+Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[7]
+Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[7]
 Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[3]
-Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[6]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[0]
 Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[22] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[7]
 Warning (13012): Latch Instruction_Memory:memoria_instrucao|RD[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[6]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Program_Counter:CONTADOR_PROGRAMA|PC[7]
+Warning (13012): Latch ControlUnit:unidade_controle|Jr has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:unidade_controle|WideNor7
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "LCD_DATA[0]~synth"
     Warning (13010): Node "LCD_DATA[1]~synth"
@@ -565,29 +642,15 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "LCD_DATA[6]~synth"
     Warning (13010): Node "LCD_DATA[7]~synth"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[6]" is stuck at GND
-    Warning (13410): Pin "HEX0[5]" is stuck at VCC
-    Warning (13410): Pin "HEX0[4]" is stuck at VCC
-    Warning (13410): Pin "HEX0[3]" is stuck at GND
-    Warning (13410): Pin "HEX0[2]" is stuck at GND
-    Warning (13410): Pin "HEX0[1]" is stuck at GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC
-    Warning (13410): Pin "HEX3[5]" is stuck at GND
-    Warning (13410): Pin "HEX3[4]" is stuck at GND
-    Warning (13410): Pin "HEX3[3]" is stuck at GND
-    Warning (13410): Pin "HEX3[2]" is stuck at GND
-    Warning (13410): Pin "HEX3[1]" is stuck at GND
-    Warning (13410): Pin "HEX3[0]" is stuck at GND
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC
-    Warning (13410): Pin "HEX4[5]" is stuck at GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
     Warning (13410): Pin "HEX4[4]" is stuck at GND
     Warning (13410): Pin "HEX4[3]" is stuck at GND
-    Warning (13410): Pin "HEX4[2]" is stuck at GND
     Warning (13410): Pin "HEX4[1]" is stuck at GND
     Warning (13410): Pin "HEX4[0]" is stuck at GND
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC
     Warning (13410): Pin "HEX6[5]" is stuck at GND
     Warning (13410): Pin "HEX6[4]" is stuck at GND
+    Warning (13410): Pin "HEX6[3]" is stuck at GND
     Warning (13410): Pin "HEX6[2]" is stuck at GND
     Warning (13410): Pin "HEX6[1]" is stuck at GND
     Warning (13410): Pin "HEX6[0]" is stuck at GND
@@ -605,13 +668,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[7]" is stuck at GND
     Warning (13410): Pin "LEDG[8]" is stuck at GND
     Warning (13410): Pin "LEDR[2]" is stuck at GND
-    Warning (13410): Pin "LEDR[3]" is stuck at GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
-    Warning (13410): Pin "LEDR[10]" is stuck at GND
-    Warning (13410): Pin "LEDR[11]" is stuck at GND
-    Warning (13410): Pin "LEDR[12]" is stuck at GND
     Warning (13410): Pin "LEDR[13]" is stuck at GND
     Warning (13410): Pin "LEDR[14]" is stuck at GND
     Warning (13410): Pin "LEDR[15]" is stuck at GND
@@ -622,19 +678,12 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LCD_BLON" is stuck at VCC
     Warning (13410): Pin "LCD_RW" is stuck at GND
 Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/output_files/Mod_Teste.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 21 input pin(s) that do not drive logic
+Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_27"
     Warning (15610): No output dependent on input pin "KEY[3]"
-    Warning (15610): No output dependent on input pin "SW[0]"
-    Warning (15610): No output dependent on input pin "SW[1]"
-    Warning (15610): No output dependent on input pin "SW[2]"
-    Warning (15610): No output dependent on input pin "SW[3]"
-    Warning (15610): No output dependent on input pin "SW[4]"
-    Warning (15610): No output dependent on input pin "SW[5]"
-    Warning (15610): No output dependent on input pin "SW[6]"
-    Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
     Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "SW[10]"
@@ -646,15 +695,21 @@ Warning (21074): Design contains 21 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[16]"
     Warning (15610): No output dependent on input pin "SW[17]"
     Warning (15610): No output dependent on input pin "UART_RXD"
-Info (21057): Implemented 4409 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4582 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 25 input pins
     Info (21059): Implemented 89 output pins
     Info (21060): Implemented 80 bidirectional pins
-    Info (21061): Implemented 4215 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 135 warnings
-    Info: Peak virtual memory: 4618 megabytes
-    Info: Processing ended: Sun Mar 17 15:42:29 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:08
+    Info (21061): Implemented 4388 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 118 warnings
+    Info: Peak virtual memory: 4620 megabytes
+    Info: Processing ended: Tue May 14 13:43:21 2024
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:12
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/ygorp/Desktop/LASD/LASD ATUAL/LASD/output_files/Mod_Teste.map.smsg.
 
 

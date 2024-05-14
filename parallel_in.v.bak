@@ -1,0 +1,16 @@
+module parallel_in
+(input [7:0] Data_in,
+input [7:0] Address, MemData
+output reg [7:0] RegData);
+
+always @ (*)
+begin
+	if(Addres == 	8'hFF)
+	RegData = Data_in;
+	else
+	RegData = MemData;
+end	
+		
+		
+endmodule	
+	
