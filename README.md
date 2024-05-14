@@ -1,8 +1,10 @@
 # Projeto Final LASD
 
 Este é um Repositório dedicado para a disciplina de Laboratório de Arquitetura de Sistemas Digitais, onde volta-se atenção para o projeto final da disciplina. 
-Nesse caso foi escolhido adicionar suporte às seguintes novas instruções do processador de ciclo único: JAL, JR, ANDI, ORI e SRL. Todas as alterações foram feitas a partir
-do processador resultante da sprint 8.
+Nesse caso foi escolhido adicionar suporte às seguintes novas instruções do processador de ciclo único: JAL, JR, ANDI, ORI e SRL. No repositório, consta na 
+<i> Instruction Memory </i>  um código RISC-V em que aplicamos todas as novas instruções. 
+Todas as alterações foram feitas a partir
+do processador resultante da sprint 8. 
 
 ## JAL
 
